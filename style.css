@@ -1,0 +1,95 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    background: #f7edff;
+}
+.buttons{
+    margin: 50px;
+}
+.buttons button{
+    background-color: #333;
+    color: #fff;
+    border: 0;
+    outline: 0;
+    width: 120px;
+    height: 40px;
+    cursor: pointer;
+}
+#toastBox{
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    padding: 20px;
+}
+.toast{
+    width: 400px;
+    height: 80px;
+    background-color: #fff;
+    margin: 15px 0;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+.toast i{
+margin: 0 20px;
+font-size: 35px;
+color: green;
+}
+.toast.error i{
+    color: red;
+}
+.toast.invalid i{
+    color: orange;
+}
+
+.toast::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 5px;
+    background: green;
+    animation: anim 5s linear forwards; 
+}
+@keyframes anim{
+    100%{
+        width: 0;
+    }
+}
+.toast.error::after{
+    background: red;
+}
+.toast.invalid::after{
+    background: orange;
+}
+
+
+
+
+/* .tick::before,.error::before,.invalid::before{
+    content: '';
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size:30px;
+    width: 40px;
+    height:40px;
+    padding: 5px;
+}
+.tick::before{
+    background-image: url(tick.png);
+}
+.error::before{
+    background-image: url(error.png);
+}
+.invalid::before{
+    background-image: url(invalid.png);
+} */
